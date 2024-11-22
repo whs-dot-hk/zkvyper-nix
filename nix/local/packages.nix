@@ -1,4 +1,6 @@
-with inputs.nixpkgs;
+let
+    inherit (inputs.nixpkgs) stdenv;
+in
 
 {
     zkvyper_1_3_9 = stdenv.mkDerivation {

@@ -32,7 +32,7 @@ fn get_url(version: &str) -> String {
 
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
-    let stdenv = &genco::prelude::nix::with("inputs.nixpkgs", "stdenv");
+    let stdenv = &genco::prelude::nix::inherit("inputs.nixpkgs", "stdenv");
     let mut tokens = genco::lang::nix::Tokens::new();
     tokens.append("{");
     tokens.push();
