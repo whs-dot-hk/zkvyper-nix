@@ -212,4 +212,15 @@ in
             url = "https://github.com/matter-labs/zkvyper-bin/raw/main/linux-amd64/zkvyper-linux-amd64-musl-v1.5.7";
         };
     };
+    zkvyper_1_5_8 = stdenv.mkDerivation {
+        dontBuild = true;
+        dontUnpack = true;
+        installPhase = "mkdir -p $out/bin; cp $src $out/bin/zkvyper; chmod +x $out/bin/zkvyper";
+        pname = "zkvyper";
+        version = "1.5.8";
+        src = builtins.fetchurl {
+            sha256 = "sha256-mU9sYyZ5QuuNOdGiZW/mB9HG19KCQRymasIjtzXrpD8=";
+            url = "https://github.com/matter-labs/zkvyper-bin/raw/main/linux-amd64/zkvyper-linux-amd64-musl-v1.5.8";
+        };
+    };
 }
